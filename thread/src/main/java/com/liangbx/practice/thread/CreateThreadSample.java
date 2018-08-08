@@ -10,7 +10,7 @@ import java.util.concurrent.FutureTask;
  * 2. 实现Runnable
  * 3. 实现Callable
  */
-public class BaseThreadSample {
+public class CreateThreadSample {
 
     static class A extends Thread {
 
@@ -61,9 +61,7 @@ public class BaseThreadSample {
         try {
             // 阻塞该线程，等待C执行完毕
             System.out.println(cTask.get());
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
+        } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }
     }
