@@ -39,7 +39,7 @@ public class MuttonSkewersShop {
                 System.out.println("烤制完" + eachTimeBakeCount + "个，通知在等待的顾客");
                 try {
                     // 通知并放弃当前锁
-                    notifyAll();
+                    notify();
                 } catch (IllegalMonitorStateException e) {
                     System.out.println("无顾客等待中");
                 }

@@ -16,7 +16,7 @@ public class ProductConsumeSample {
     public static void main(String[] args) {
         final MuttonSkewersShop shop = new MuttonSkewersShop();
 
-        // 店铺开张
+        // 一个店铺开张
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -24,15 +24,15 @@ public class ProductConsumeSample {
             }
         }, "shop").start();
 
-        // 顾客购买
+        // N个顾客购买
         final Random random = new Random();
-        for(int i=0; i<1; i++) {
+        for(int i=1; i<=1; i++) {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
                     shop.sale(random.nextInt(20)+1);
                 }
-            }, "customer - " + i).start();
+            }, "customer-" + i).start();
         }
     }
 }
