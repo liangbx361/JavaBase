@@ -14,7 +14,7 @@ public class CreateThreadSample {
 
     static class A extends Thread {
 
-        public A(String name) {
+        A(String name) {
             super(name);
         }
 
