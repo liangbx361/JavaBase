@@ -13,6 +13,8 @@ import java.util.Random;
  */
 public class ProductConsumeSample {
 
+    static int sBuyCount;
+
     public static void main(String[] args) {
         final MuttonSkewersShop shop = new MuttonSkewersShop();
 
@@ -26,11 +28,14 @@ public class ProductConsumeSample {
 
         // N个顾客购买
         final Random random = new Random();
-        for(int i=1; i<=1; i++) {
+        for(int i=1; i<=10; i++) {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    shop.sale(random.nextInt(20)+1);
+                    int buyCount = random.nextInt(20) + 1;
+                    sBuyCount += buyCount;
+                    System.out.println("共需购买: " + sBuyCount);
+                    shop.sale(buyCount);
                 }
             }, "customer-" + i).start();
         }
