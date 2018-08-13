@@ -1,1 +1,1 @@
-include ':app', ':rx-java', ':thread'
+include ':app', ':rx-java', ':thread', ':lambda'
